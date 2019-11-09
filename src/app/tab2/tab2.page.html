@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <button (click)="ObtenerUsuarios()" class="desing">
+    Obtener Usuarios
+  </button>
+
+  <ion-item>
+      
+  <ion-label>Codigo Cliente</ion-label>
+  <ion-label>Nombre</ion-label>
+  <ion-label>Apellido</ion-label>
+  <ion-label>Dpi</ion-label>
+  <ion-label>Edad</ion-label>
+  </ion-item>
+    <ion-list *ngFor="let usuario of usuarios">
+        <ion-item>
+            <ion-icon name="person"></ion-icon>
+            <ion-label>{{usuario.id_usuario}}</ion-label>
+            <ion-label>{{usuario.nombre}}</ion-label>
+            <ion-label>{{usuario.apellido}}</ion-label>
+            <ion-label>{{usuario.dpi}}</ion-label>
+            <ion-label>{{usuario.edad}}</ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

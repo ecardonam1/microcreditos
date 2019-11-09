@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <button (click)="ObtenerPrestamos()" class="desing">
+    Obtener prestamos
+  </button>
+
+
+
+  <ion-item>
+      
+  <ion-label>Codigo Cliente</ion-label>
+  <ion-label>monto solicitado</ion-label>
+  <ion-label>monto real</ion-label>
+  <ion-label>estado</ion-label>
+  <ion-label>descripcion</ion-label>
+  <ion-label>id prestamo</ion-label>
+  </ion-item>
+    <ion-list *ngFor="let prestamo of prestamos">
+  <ion-item-sliding>
+        <ion-item>
+            <ion-icon name="person"></ion-icon>
+            <ion-label>{{prestamo.id_usuario}}</ion-label>
+            <ion-label>{{prestamo.monto_solicitado}}</ion-label>
+            <ion-label>{{prestamo.monto_real}}</ion-label>
+            <ion-label>{{prestamo.estado}}</ion-label>
+            <ion-label>{{prestamo.descripcion}}</ion-label>
+            <ion-label>{{prestamo.id_prestamo}}</ion-label>
+            
+            
+        </ion-item>
+        
+        
+<ion-item-options side="end">
+        <ion-item-option (click)="aprobarcredito(prestamo.id_prestamo)">aprobar</ion-item-option>
+  <ion-item-option (click)="rechazarcredito(prestamo.id_prestamo)">Rechazar</ion-item-option>
+    </ion-item-options>
+    
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>
